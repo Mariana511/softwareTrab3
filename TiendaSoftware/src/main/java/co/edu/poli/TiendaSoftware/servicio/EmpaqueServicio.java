@@ -4,7 +4,7 @@ import co.edu.poli.TiendaSoftware.modelo.*;
 
 public class EmpaqueServicio {
 	
-	/*public String procesarEmpaque(Producto producto, String tipoEmpaque) {
+	public String procesarEmpaque(Producto producto, String tipoEmpaque) {
         switch (tipoEmpaque) {
             case "Regalo":
                 producto.setEstrategiaEmpaque(new EmpaqueRegalo());
@@ -18,5 +18,5 @@ public class EmpaqueServicio {
         }
         return producto.obtenerEmpaque();
     }
-*/
+
 }
