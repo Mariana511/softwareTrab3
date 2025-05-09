@@ -29,6 +29,7 @@ public class Controller {
 	    @FXML
 	    public void initialize() {
 	        listViewProductos.setItems(productosObservable);
+	        comboEmpaque.getItems().addAll("Regalo", "Ecológico", "Estandar");
 	    }
 
 	    @FXML
