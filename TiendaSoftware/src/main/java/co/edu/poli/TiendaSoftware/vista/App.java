@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/co/edu/poli/TiendaSoftware/Vista/vista.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/co/edu/poli/TiendaSoftware/vista/vista.fxml"));
         Scene scene = new Scene(root, 400, 400);
         stage.setTitle("Gestión de Pedido - Command Pattern");
         stage.setScene(scene);
