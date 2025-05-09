@@ -8,6 +8,6 @@ module co.edu.poli.TiendaSoftware {
     exports co.edu.poli.TiendaSoftware.modelo;
     exports co.edu.poli.TiendaSoftware.vista;
 
-    opens co.edu.poli.TiendaSoftware.Vista to javafx.fxml;
+    opens co.edu.poli.TiendaSoftware.vista to javafx.fxml;
     opens co.edu.poli.TiendaSoftware.controller to javafx.fxml;
 }
