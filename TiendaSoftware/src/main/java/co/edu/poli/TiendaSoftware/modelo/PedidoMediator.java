@@ -1,6 +1,6 @@
 package co.edu.poli.TiendaSoftware.modelo;
 
-public interface pedidoMediator {
+public interface PedidoMediator {
 	 void seleccionarCliente(String nombre);
 	    void agregarProducto(String nombre);
 	    void procesarPedido();

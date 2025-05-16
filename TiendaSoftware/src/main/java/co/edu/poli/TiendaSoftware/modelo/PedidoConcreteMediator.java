@@ -1,6 +1,6 @@
 package co.edu.poli.TiendaSoftware.modelo;
 
-public class pedidoConcreteMediator implements PedidoMediator {
+public class PedidoConcreteMediator implements PedidoMediator {
 
     private Pedido pedido;
 
