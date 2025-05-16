@@ -2,44 +2,51 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="co.edu.poli.TiendaSoftware.controller.Controller"
-      padding="20.0 20.0 20.0 20.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="co.edu.poli.TiendaSoftware.controller.Controller"
+            prefWidth="600" prefHeight="600">
 
-    <!-- Sección: Cliente -->
-    <TextField fx:id="txtCliente" promptText="Nombre del cliente"/>
-    <Button text="Crear Pedido" onAction="#crearPedido"/>
+    <!-- Campo Cliente y Botón Crear Pedido -->
+    <VBox spacing="10" layoutX="20" layoutY="20">
+        <TextField fx:id="txtCliente" promptText="Nombre del cliente"/>
+        <Button text="Crear Pedido" onAction="#crearPedido"/>
+    </VBox>
 
-    <!-- Sección: Producto -->
-    <TextField fx:id="txtProducto" promptText="Nombre del producto"/>
-    <HBox spacing="10">
-        <Button text="Agregar Producto" onAction="#agregarProducto"/>
-        <Button text="Quitar Producto" onAction="#quitarProducto"/>
-    </HBox>
+    <!-- Campo Producto y Botones Agregar/Quitar -->
+    <VBox spacing="10" layoutX="20" layoutY="100">
+        <TextField fx:id="txtProducto" promptText="Nombre del producto"/>
+        <HBox spacing="10">
+            <Button text="Agregar Producto" onAction="#agregarProducto"/>
+            <Button text="Quitar Producto" onAction="#quitarProducto"/>
+        </HBox>
+    </VBox>
 
     <!-- Lista de productos -->
-    <ListView fx:id="listViewProductos" prefHeight="150"/>
-    <Label fx:id="lblMensaje"/>
+    <ListView fx:id="listViewProductos" layoutX="20" layoutY="180" prefHeight="120" prefWidth="560"/>
+    <Label fx:id="lblMensaje" layoutX="20" layoutY="310" textFill="red"/>
 
-    <!-- Sección: Tipo de Empaque -->
-    <Separator/>
-    <Label text="Seleccione tipo de empaque:"/>
-    <HBox spacing="10">
+    <!-- Selector de empaque -->
+    <Separator layoutX="20" layoutY="330" prefWidth="560"/>
+    <Label text="Seleccione tipo de empaque:" layoutX="20" layoutY="350"/>
+    <HBox spacing="10" layoutX="20" layoutY="370">
         <ComboBox fx:id="comboEmpaque" prefWidth="200"/>
         <Button text="Aplicar Empaque" onAction="#empacarProducto"/>
     </HBox>
-    <Label fx:id="labelResultado" wrapText="true"/>
+    <Label fx:id="labelResultado" layoutX="20" layoutY="410" wrapText="true" prefWidth="560"/>
 
-    <!-- Sección: Estado del pedido -->
-    <Separator/>
-    <Label text="Estado del pedido:"/>
-    <Label fx:id="labelEstado" text="Estado actual: "/>
+    <!-- Estado del pedido -->
+    <Separator layoutX="20" layoutY="440" prefWidth="560"/>
+    <Label text="Estado del pedido:" layoutX="20" layoutY="460"/>
+    <Label fx:id="labelEstado" layoutX="20" layoutY="480" text="Estado actual: "/>
 
-    <HBox spacing="10">
+    <!-- Botones de estado -->
+    <HBox spacing="10" layoutX="20" layoutY="510">
         <Button text="Procesar" onAction="#procesarPedido"/>
         <Button text="Enviar" onAction="#enviarPedido"/>
         <Button text="Entregar" onAction="#entregarPedido"/>
     </HBox>
-</VBox>
+
+</AnchorPane>
