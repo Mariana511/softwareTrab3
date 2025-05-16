@@ -1,5 +1,5 @@
 
-module co.edu.poli.ProductoSoftware {
+module co.edu.poli.TiendaSoftware {
     requires java.base;
     requires javafx.controls;
     requires javafx.fxml;
