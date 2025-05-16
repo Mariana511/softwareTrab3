@@ -7,13 +7,19 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 
 public class App extends Application {
-    @Override
+	@Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/co/edu/poli/TiendaSoftware/vista/vista.fxml"));
-        Scene scene = new Scene(root, 400, 400);
-        stage.setTitle("Gestión de Pedido - Command Pattern");
-        stage.setScene(scene);
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/poli/TiendaSoftware/vista/vista.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root, 500, 600); // Puedes ajustar el tamaño si quieres
+            stage.setTitle("Gestión de Pedido - TiendaSoftware");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al cargar la interfaz FXML.");
+        }
     }
 
     public static void main(String[] args) {
