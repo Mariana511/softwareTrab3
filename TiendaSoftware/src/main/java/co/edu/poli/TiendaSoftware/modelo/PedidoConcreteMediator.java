@@ -1,5 +1,7 @@
 package co.edu.poli.TiendaSoftware.modelo;
 
+
+
 public class PedidoConcreteMediator implements PedidoMediator {
 
     private Pedido pedido;
@@ -46,5 +48,10 @@ public class PedidoConcreteMediator implements PedidoMediator {
         } else {
             return "No hay pedido creado.";
         }
+    }
+
+    // Getter para acceder al pedido desde el controlador
+    public Pedido getPedido() {
+        return pedido;
     }
 }

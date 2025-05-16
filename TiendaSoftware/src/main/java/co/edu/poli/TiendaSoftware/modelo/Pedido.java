@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-	private Cliente cliente;
+    private Cliente cliente;
     private List<Producto> productos;
     private EstadoPedidoState estado;
 
@@ -67,5 +67,21 @@ public class Pedido {
 
     public String getEstadoNombre() {
         return estado.getClass().getSimpleName().replace("Estado", "");
+    }
+
+    // ✅ Método adicional para mostrar resumen del pedido (usado por el Mediator)
+    public String getResumen() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cliente: ").append(cliente != null ? cliente.getNombre() : "No seleccionado").append("\n");
+        sb.append("Estado: ").append(getEstadoNombre()).append("\n");
+        sb.append("Productos:\n");
+        if (productos.isEmpty()) {
+            sb.append("  (Sin productos agregados)\n");
+        } else {
+            for (Producto p : productos) {
+                sb.append("- ").append(p.getNombre()).append(" [").append(p.obtenerEmpaque()).append("]\n");
+            }
+        }
+        return sb.toString();
     }
 }

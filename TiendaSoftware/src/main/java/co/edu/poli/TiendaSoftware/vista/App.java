@@ -1,4 +1,4 @@
-package co.edu.poli.TiendaSoftware.Vista;
+package co.edu.poli.TiendaSoftware.vista;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
