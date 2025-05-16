@@ -1,0 +1,51 @@
+@startuml
+
+interface Command {
+    +execute(): void
+}
+
+class AddProductCommand {
+    -pedido: Pedido
+    -producto: Producto
+    +execute(): void
+}
+
+class RemoveProductCommand {
+    -pedido: Pedido
+    -producto: Producto
+    +execute(): void
+}
+
+class Pedido {
+    -productos: List<Producto>
+    +agregarProducto(p: Producto): void
+    +eliminarProducto(p: Producto): void
+    +getProductos(): List<Producto>
+}
+
+class Producto {
+    -nombre: String
+    -precio: double
+    +Producto(nombre: String, precio: double)
+    +getNombre(): String
+    +getPrecio(): double
+}
+
+class PedidoController {
+    -addProductCommand: Command
+    -removeProductCommand: Command
+    +agregarProducto(): void
+    +eliminarProducto(): void
+}
+
+Command <|-- AddProductCommand
+Command <|-- RemoveProductCommand
+AddProductCommand --> Pedido
+AddProductCommand --> Producto
+RemoveProductCommand --> Pedido
+RemoveProductCommand --> Producto
+PedidoController --> AddProductCommand
+PedidoController --> RemoveProductCommand
+Pedido "1" --> "*" Producto
+
+@enduml

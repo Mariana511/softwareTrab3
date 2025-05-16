@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.poli.TiendaSoftware.controller.Controller"
+      padding="20.0 20.0 20.0 20.0">
+
+    <!-- Sección: Cliente -->
+    <TextField fx:id="txtCliente" promptText="Nombre del cliente"/>
+    <Button text="Crear Pedido" onAction="#crearPedido"/>
+
+    <!-- Sección: Producto -->
+    <TextField fx:id="txtProducto" promptText="Nombre del producto"/>
+    <HBox spacing="10">
+        <Button text="Agregar Producto" onAction="#agregarProducto"/>
+        <Button text="Quitar Producto" onAction="#quitarProducto"/>
+    </HBox>
+
+    <!-- Lista de productos -->
+    <ListView fx:id="listViewProductos" prefHeight="150"/>
+    <Label fx:id="lblMensaje"/>
+
+    <!-- Sección: Tipo de Empaque -->
+    <Separator/>
+    <Label text="Seleccione tipo de empaque:"/>
+    <HBox spacing="10">
+        <ComboBox fx:id="comboEmpaque" prefWidth="200"/>
+        <Button text="Aplicar Empaque" onAction="#empacarProducto"/>
+    </HBox>
+    <Label fx:id="labelResultado" wrapText="true"/>
+
+    <!-- Sección: Estado del pedido -->
+    <Separator/>
+    <Label text="Estado del pedido:"/>
+    <Label fx:id="labelEstado" text="Estado actual: "/>
+
+    <HBox spacing="10">
+        <Button text="Procesar" onAction="#procesarPedido"/>
+        <Button text="Enviar" onAction="#enviarPedido"/>
+        <Button text="Entregar" onAction="#entregarPedido"/>
+    </HBox>
+</VBox>
