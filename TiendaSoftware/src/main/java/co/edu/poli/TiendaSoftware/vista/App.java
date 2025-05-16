@@ -1,4 +1,4 @@
-package co.edu.poli.TiendaSoftware.vista;
+package co.edu.poli.TiendaSoftware.Vista;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class App extends Application {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/poli/TiendaSoftware/vista/vista.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root, 500, 600); // Puedes ajustar el tamaño si quieres
+            Scene scene = new Scene(root, 500, 600); 
             stage.setTitle("Gestión de Pedido - TiendaSoftware");
             stage.setScene(scene);
             stage.show();
